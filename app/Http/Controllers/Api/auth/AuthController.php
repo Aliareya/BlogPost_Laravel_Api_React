@@ -44,15 +44,15 @@ class AuthController extends Controller
 
         // Set cookie
         $cookie = cookie(
-            'auth_token',    // Cookie name
-            $token,          // Token value
-            60 * 24,         // Expiration in minutes (7 days)
-            '/',             // Path
-            null,            // Domain (null = localhost)
-            false,           // Secure (set to true if using https)
-            true,            // HttpOnly
-            false,           // Raw
-            'Strict'         // SameSite policy
+            'auth_token',
+            $token,
+            60 * 24 * 7,
+            '/',
+            'localhost',
+            false,
+            true,
+            false,
+            'Strict'
         );
 
         return response()->json([
