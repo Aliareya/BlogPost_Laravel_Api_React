@@ -49,10 +49,10 @@ class AuthController extends Controller
             60 * 24 * 7,
             '/',
             'localhost',
-            false,
-            true,
-            false,
-            'Strict'
+            false,  // Secure=false برای HTTP
+            true,   // HttpOnly
+            false,  // Raw
+            'Lax'   // ← مهم: Strict → مشکل localhost، Lax اجازه می‌دهد کوکی فرستاده شود
         );
 
         return response()->json([
